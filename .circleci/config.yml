@@ -1,0 +1,20 @@
+version: 2
+jobs:
+  build:
+    working_directory: ~/toranoko-api-prototype
+    docker:
+      - image: circleci/openjdk:8-jdk-stretch
+    steps:
+      - checkout
+      - restore_cache:
+          key: toranoko-api-prototype-{{ checksum "pom.xml" }}
+      - run: mvn dependency:go-offline
+      - save_cache:
+          paths:
+            - ~/.m2
+          key: toranoko-api-prototype-{{ checksum "pom.xml" }}
+      - run: mvn clean verify
+      - store_test_results:
+          path: reports
+      - store_artifacts:
+          path: reports
