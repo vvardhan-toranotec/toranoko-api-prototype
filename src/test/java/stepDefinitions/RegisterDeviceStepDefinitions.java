@@ -17,10 +17,10 @@ public class RegisterDeviceStepDefinitions {
 
 	private Util util;
 
-	private static Random random = new Random();
-	private static String randomString = String.valueOf(random.nextInt());
+	private Random random = new Random();
+	private String randomString = String.valueOf(random.nextInt());
 	private static final String userAgent = "OS:android OSVERSION:12 APPVERSION:6";
-	private static final String deviceId = "0bab83dd-a8bc-4502-8e6d-bb78849b9a" + randomString;
+	private final String deviceId = "0bab83dd-a8bc-4502-8e6d-bb78849b9a" + randomString;
 	private static final String password = "password123456";
 	private RegisterDeviceEndpoint registerDeviceEndpoint = new RegisterDeviceEndpoint();
 
