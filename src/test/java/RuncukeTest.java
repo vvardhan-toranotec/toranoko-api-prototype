@@ -8,7 +8,7 @@ import io.cucumber.testng.CucumberOptions;
 				glue = "stepDefinitions",
 				dryRun = false,
 				monochrome = true,
-				tags= "@Vishnu",
+				tags= "@smokeTest",
 				plugin = {
 				"pretty",
 				"html:target/cucumber-reports/cucumber-html-report.html",
