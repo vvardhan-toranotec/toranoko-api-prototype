@@ -15,6 +15,6 @@ jobs:
           key: toranoko-api-prototype-{{ checksum "pom.xml" }}
       - run: mvn clean verify
       - store_test_results:
-          path: reports
+          path: target
       - store_artifacts:
-          path: reports
+          path: target
