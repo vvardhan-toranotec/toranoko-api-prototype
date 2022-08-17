@@ -13,8 +13,19 @@ jobs:
           paths:
             - ~/.m2
           key: toranoko-api-prototype-{{ checksum "pom.xml" }}
+  test:
+    steps:
+      - checkout
       - run: mvn clean verify
       - store_test_results:
           path: target
       - store_artifacts:
           path: target
+
+workflows:
+  build_and_test:
+    jobs:
+      - build
+      - test:
+          requires:
+            - build
