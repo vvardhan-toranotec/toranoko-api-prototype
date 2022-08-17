@@ -3,7 +3,6 @@ Feature: Register Device Tests
 
   @TestCaseId=MS-669
   @smokeTest
-    @Vishnu
   Scenario: Register a device in MS with valid data
     Given I have a valid header for device
     When I register a device with valid data
@@ -12,7 +11,6 @@ Feature: Register Device Tests
 
   @TestCaseId=TOR2D-XXXX
     @smokeTest
-    @Vishnu
   Scenario Outline: Register a device with existing deviceId
     Given I have a valid header for device
     When I register a device with valid data
@@ -25,7 +23,6 @@ Feature: Register Device Tests
 
   @TestCaseId=TOR2D-XXXX
   @smokeTest
-    @Vishnu
   Scenario Outline: Register a device with missing or whitespace data
     Given I have a valid header for device
     When I register a device with whitespace string for the field <field> and value <value>
